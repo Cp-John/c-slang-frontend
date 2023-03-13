@@ -11,6 +11,28 @@ import { ExternalLibraryName } from '../application/types/ExternalTypes';
 import { ReplInput } from './ReplInput';
 import { OutputProps } from './ReplTypes';
 
+const ESCAPE_CHARACTERS = {
+  '\\a': 'a',
+  '\\b': '\b',
+  '\\f': '\f',
+  '\\n': '\n',
+  '\\r': '\r',
+  '\\t': '\t',
+  '\\v': '\v',
+  "\\'": "'",
+  '\\"': '"',
+  '\\?': '?',
+  '\\\\': '\\'
+}
+
+function restoreEscapeCharacters(original: string): string {
+  let result = original
+  for (const toReplace in ESCAPE_CHARACTERS) {
+    result = result.replaceAll(toReplace, ESCAPE_CHARACTERS[toReplace])
+  }
+  return result
+}
+
 export type ReplProps = DispatchProps & StateProps & OwnProps;
 
 type StateProps = {
@@ -89,7 +111,7 @@ export const Output: React.FC<OutputProps> = (props: OutputProps) => {
       } else if (props.output.consoleLogs.length === 0) {
         return (
           <Card>
-            <Pre className="result-output">{props.output.value.split('\\n').join('\n')}</Pre>
+            <Pre className="result-output">{restoreEscapeCharacters(props.output.value)}</Pre>
           </Card>
         );
       } else {
