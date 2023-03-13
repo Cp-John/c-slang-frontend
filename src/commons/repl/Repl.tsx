@@ -64,6 +64,7 @@ const Repl: React.FC<ReplProps> = (props: ReplProps) => {
 };
 
 export const Output: React.FC<OutputProps> = (props: OutputProps) => {
+  console.log(props)
   switch (props.output.type) {
     case 'code':
       return (
@@ -88,7 +89,7 @@ export const Output: React.FC<OutputProps> = (props: OutputProps) => {
       } else if (props.output.consoleLogs.length === 0) {
         return (
           <Card>
-            <Pre className="result-output">{props.output.value}</Pre>
+            <Pre className="result-output">{props.output.value.split('\\n').join('\n')}</Pre>
           </Card>
         );
       } else {

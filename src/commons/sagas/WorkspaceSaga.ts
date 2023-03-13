@@ -1,6 +1,6 @@
 import {
   Context,
-  findDeclaration,
+  // findDeclaration,
   interrupt,
   runInContext
 } from 'calc-slang';
@@ -266,24 +266,24 @@ export default function* WorkspaceSaga(): SagaIterator {
     NAV_DECLARATION,
     function* (action: ReturnType<typeof actions.navigateToDeclaration>) {
       const workspaceLocation = action.payload.workspaceLocation;
-      const code: string = yield select(
-        // TODO: Hardcoded to make use of the first editor tab. Rewrite after editor tabs are added.
-        (state: OverallState) => state.workspaces[workspaceLocation].editorTabs[0].value
-      );
+      // const code: string = yield select(
+      //   // TODO: Hardcoded to make use of the first editor tab. Rewrite after editor tabs are added.
+      //   (state: OverallState) => state.workspaces[workspaceLocation].editorTabs[0].value
+      // );
       context = yield select((state: OverallState) => state.workspaces[workspaceLocation].context);
 
-      const result = findDeclaration(code, context, {
-        line: action.payload.cursorPosition.row + 1,
-        column: action.payload.cursorPosition.column
-      });
-      if (result) {
-        yield put(
-          actions.moveCursor(action.payload.workspaceLocation, {
-            row: result.start.line - 1,
-            column: result.start.column
-          })
-        );
-      }
+      // const result = findDeclaration(code, context, {
+      //   line: action.payload.cursorPosition.row + 1,
+      //   column: action.payload.cursorPosition.column
+      // });
+      // if (result) {
+      //   yield put(
+      //     actions.moveCursor(action.payload.workspaceLocation, {
+      //       row: result.start.line - 1,
+      //       column: result.start.column
+      //     })
+      //   );
+      // }
     }
   );
 
@@ -563,6 +563,9 @@ export function* evalCode(
     interrupted: take(BEGIN_INTERRUPT_EXECUTION),
     paused: take(BEGIN_DEBUG_PAUSE)
   });
+  console.log('result:', result)
+  console.log('interrupted', interrupted)
+  console.log('paused', paused)
   if (interrupted) {
     interrupt(context);
     /* Redundancy, added ensure that interruption results in an error. */
