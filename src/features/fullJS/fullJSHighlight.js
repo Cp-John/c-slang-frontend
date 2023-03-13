@@ -97,7 +97,7 @@ export function HighlightRulesSelector_native(
         'identifier'
       );
       const keywordBeforeRegex =
-        'case|do|else|finally|in|instanceof|return|throw|try|typeof|yield|void|int|char|float|break|continue|if|else|while|for';
+        'case|do|else|finally|in|instanceof|return|throw|try|typeof|yield|void|int|char|float|break|continue|if|else|while|for|#include|#define';
       const escapedRegex =
         '\\\\(?:x[0-9a-fA-F]{2}|' + // hex
         'u[0-9a-fA-F]{4}|' + // unicode
