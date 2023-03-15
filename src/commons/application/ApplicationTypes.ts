@@ -179,7 +179,30 @@ export const defaultPlayground: PlaygroundState = {
   githubSaveInfo: { repoName: '', filePath: '' }
 };
 
-export const defaultEditorValue = '1+1';
+export const defaultEditorValue = `
+#include <stdio.h>
+
+void move(int n, char from_rod, char to_rod, char aux_rod) {
+    if (n == 1) {
+        printf("将盘子 %d 从柱子 %c 移动到柱子 %c\\n", n, from_rod, to_rod);
+        return;
+    }
+    move(n-1, from_rod, aux_rod, to_rod);
+    printf("将盘子 %d 从柱子 %c 移动到柱子 %c\\n", n, from_rod, to_rod);
+    move(n-1, aux_rod, to_rod, from_rod);
+}
+
+int main() {
+    int n;
+    n = 1;
+    // printf("请输入盘子的数量：");
+    // scanf("%d", &n);
+
+    move(n, 'A', 'C', 'B');
+
+    return 0;
+}
+`;
 
 /**
  * Create a default IWorkspaceState for 'resetting' a workspace.
@@ -221,7 +244,7 @@ export const createDefaultWorkspace = (workspaceLocation: WorkspaceLocation): Wo
   sharedbConnected: false,
   stepLimit: 1000,
   globals: [],
-  isEditorAutorun: false,
+  isEditorAutorun: true,
   isRunning: false,
   isDebugging: false,
   enableDebugging: true,
