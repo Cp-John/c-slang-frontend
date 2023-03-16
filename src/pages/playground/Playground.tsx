@@ -1,7 +1,7 @@
 import { Classes } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import { Octokit } from '@octokit/rest';
-import { Ace, Range } from 'ace-builds';
+import { Ace } from 'ace-builds';
 import { Chapter, Variant } from 'calc-slang/dist/types';
 import classNames from 'classnames';
 import _, { isEqual } from 'lodash';
@@ -472,14 +472,16 @@ const Playground: React.FC<PlaygroundProps> = ({ workspaceLocation = 'playground
 
   const onLoadMethod = React.useCallback(
     (editor: Ace.Editor) => {
-      const addFold = () => {
-        editor.getSession().addFold('    ', new Range(1, 0, props.prependLength!, 0));
-        editor.renderer.off('afterRender', addFold);
-      };
-
-      editor.renderer.on('afterRender', addFold);
+      let firstTime = true
+      const firstTimeHandleEditorCheck = () => {
+        if (firstTime) {
+          handleEditorCheck()
+          firstTime = false
+        }
+      }
+      editor.renderer.on('afterRender', firstTimeHandleEditorCheck);
     },
-    [props.prependLength]
+    [handleEditorCheck]
   );
 
   const onChangeMethod = React.useCallback(
@@ -574,7 +576,7 @@ const Playground: React.FC<PlaygroundProps> = ({ workspaceLocation = 'playground
     onChange: onChangeMethod,
     onCursorChange: onCursorChangeMethod,
     onSelectionChange: onSelectionChangeMethod,
-    onLoad: isSicpEditor && props.prependLength ? onLoadMethod : undefined,
+    onLoad: onLoadMethod,
     sourceChapter: props.playgroundSourceChapter,
     externalLibraryName,
     sourceVariant: props.playgroundSourceVariant,
