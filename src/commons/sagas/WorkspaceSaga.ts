@@ -390,7 +390,7 @@ export function* checkEditor(
     (state: OverallState) => state.workspaces[workspaceLocation].context
   );
   // Check for initial syntax errors. If there are errors, we will print the error messages.
-  console.log('parsed program:', parse(editorCode, context))
+  parse(editorCode, context)
   if (context.errors.length > 0) {
     yield* dumpDisplayBuffer(workspaceLocation);
     yield put(actions.evalInterpreterError(context.errors, workspaceLocation));
@@ -601,8 +601,6 @@ export function* evalCode(
     paused: take(BEGIN_DEBUG_PAUSE)
   });
   console.log('result:', result)
-  console.log('interrupted', interrupted)
-  console.log('paused', paused)
   if (interrupted) {
     interrupt(context);
     /* Redundancy, added ensure that interruption results in an error. */

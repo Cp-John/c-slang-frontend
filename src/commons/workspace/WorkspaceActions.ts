@@ -149,10 +149,9 @@ export const endClearContext = (library: Library, workspaceLocation: WorkspaceLo
 export const evalEditor = (workspaceLocation: WorkspaceLocation) =>
   action(EVAL_EDITOR, { workspaceLocation });
 
-export const checkEditor = (workspaceLocation: WorkspaceLocation) => {
-  console.log('called checkEditor')
-  return action(CHECK_EDITOR, { workspaceLocation });
-}
+export const checkEditor = (workspaceLocation: WorkspaceLocation) => 
+  action(CHECK_EDITOR, { workspaceLocation });
+
 
 export const evalRepl = (workspaceLocation: WorkspaceLocation) => 
   action(EVAL_REPL, { workspaceLocation });
