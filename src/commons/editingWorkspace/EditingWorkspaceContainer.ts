@@ -18,6 +18,7 @@ import {
   browseReplHistoryUp,
   changeSideContentHeight,
   chapterSelect,
+  checkEditor,
   clearReplOutput,
   evalEditor,
   evalRepl,
@@ -66,6 +67,7 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = (dispatch: Dis
       handleDeclarationNavigate: (cursorPosition: Position) =>
         navigateToDeclaration(workspaceLocation, cursorPosition),
       handleEditorEval: () => evalEditor(workspaceLocation),
+      handleEditorCheck: () => checkEditor(workspaceLocation),
       handleEditorValueChange: (val: string) => updateEditorValue(val, workspaceLocation),
       handleEditorUpdateBreakpoints: (breakpoints: string[]) =>
         setEditorBreakpoint(breakpoints, workspaceLocation),

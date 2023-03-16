@@ -33,6 +33,7 @@ export type EditorProps = DispatchProps & EditorStateProps & EditorTabStateProps
 type DispatchProps = {
   handleDeclarationNavigate: (cursorPosition: Position) => void;
   handleEditorEval: () => void;
+  handleEditorCheck: () => void;
   handleEditorValueChange: (newCode: string) => void;
   handleEditorUpdateBreakpoints: (breakpoints: string[]) => void;
   handlePromptAutocomplete: (row: number, col: number, callback: any) => void;
@@ -267,7 +268,8 @@ const EditorBase = React.memo((props: EditorProps & LocalStateProps) => {
     handleUpdateHasUnsavedChanges,
     handleEditorValueChange,
     isEditorAutorun,
-    handleEditorEval
+    handleEditorEval,
+    handleEditorCheck
   } = props;
   const keyHandlers: EditorKeyBindingHandlers = {
     evaluate: handleEditorEval
@@ -319,6 +321,8 @@ const EditorBase = React.memo((props: EditorProps & LocalStateProps) => {
       const annotations = reactAceRef.current.editor.getSession().getAnnotations();
       if (isEditorAutorun && annotations.length === 0) {
         handleEditorEval();
+      } else {
+        handleEditorCheck();
       }
       hooksOnChange && hooksOnChange(newCode, delta);
     },
@@ -327,7 +331,8 @@ const EditorBase = React.memo((props: EditorProps & LocalStateProps) => {
       handleUpdateHasUnsavedChanges,
       isEditorAutorun,
       hooksOnChange,
-      handleEditorEval
+      handleEditorEval,
+      handleEditorCheck
     ]
   );
 

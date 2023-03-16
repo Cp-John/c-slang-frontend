@@ -779,6 +779,7 @@ const AssessmentWorkspace: React.FC<AssessmentWorkspaceProps> = props => {
           handleDeclarationNavigate: (cursorPosition: Position) =>
             dispatch(navigateToDeclaration(workspaceLocation, cursorPosition)),
           handleEditorEval: handleEval,
+          handleEditorCheck: () => {},
           handleEditorValueChange: props.handleEditorValueChange,
           handleUpdateHasUnsavedChanges: props.handleUpdateHasUnsavedChanges,
           handleEditorUpdateBreakpoints: props.handleEditorUpdateBreakpoints,

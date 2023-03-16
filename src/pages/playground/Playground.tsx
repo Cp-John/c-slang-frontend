@@ -26,6 +26,7 @@ import {
   browseReplHistoryUp,
   changeSideContentHeight,
   changeStepLimit,
+  checkEditor,
   evalEditor,
   navigateToDeclaration,
   promptAutocomplete,
@@ -295,6 +296,11 @@ const Playground: React.FC<PlaygroundProps> = ({ workspaceLocation = 'playground
     [dispatch, workspaceLocation]
   );
 
+  const handleEditorCheck = React.useCallback(
+    () => dispatch(checkEditor(workspaceLocation)),
+    [dispatch, workspaceLocation]
+  );
+
   const autorunButtons = React.useMemo(() => {
     return (
       <ControlBarAutorunButtons
@@ -558,6 +564,7 @@ const Playground: React.FC<PlaygroundProps> = ({ workspaceLocation = 'playground
     handleDeclarationNavigate: (cursorPosition: Position) =>
       dispatch(navigateToDeclaration(workspaceLocation, cursorPosition)),
     handleEditorEval,
+    handleEditorCheck,
     handlePromptAutocomplete: (row: number, col: number, callback: any) =>
       dispatch(promptAutocomplete(workspaceLocation, row, col, callback)),
     handleSendReplInputToOutput: (code: string) =>

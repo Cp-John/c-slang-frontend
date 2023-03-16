@@ -20,6 +20,7 @@ import {
   CHANGE_STEP_LIMIT,
   CHANGE_SUBLANGUAGE,
   CHAPTER_SELECT,
+  CHECK_EDITOR,
   CLEAR_REPL_INPUT,
   CLEAR_REPL_OUTPUT,
   CLEAR_REPL_OUTPUT_LAST,
@@ -147,6 +148,11 @@ export const endClearContext = (library: Library, workspaceLocation: WorkspaceLo
 
 export const evalEditor = (workspaceLocation: WorkspaceLocation) =>
   action(EVAL_EDITOR, { workspaceLocation });
+
+export const checkEditor = (workspaceLocation: WorkspaceLocation) => {
+  console.log('called checkEditor')
+  return action(CHECK_EDITOR, { workspaceLocation });
+}
 
 export const evalRepl = (workspaceLocation: WorkspaceLocation) => 
   action(EVAL_REPL, { workspaceLocation });

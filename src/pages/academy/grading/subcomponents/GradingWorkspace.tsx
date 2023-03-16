@@ -187,6 +187,7 @@ class GradingWorkspace extends React.Component<GradingWorkspaceProps, State> {
               editorSessionId: '',
               handleDeclarationNavigate: this.props.handleDeclarationNavigate,
               handleEditorEval: this.handleEval,
+              handleEditorCheck: () => {},
               handleEditorValueChange: this.props.handleEditorValueChange,
               handleEditorUpdateBreakpoints: this.props.handleEditorUpdateBreakpoints,
               handlePromptAutocomplete: this.props.handlePromptAutocomplete,

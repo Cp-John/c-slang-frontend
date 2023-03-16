@@ -65,6 +65,7 @@ export type DispatchProps = {
   handleClearContext: (library: Library, shouldInitLibrary: boolean) => void;
   handleDeclarationNavigate: (cursorPosition: Position) => void;
   handleEditorEval: () => void;
+  handleEditorCheck: () => void;
   handleEditorValueChange: (val: string) => void;
   handleEditorUpdateBreakpoints: (breakpoints: string[]) => void;
   handleInterruptEval: () => void;
@@ -616,6 +617,7 @@ const EditingWorkspace: React.FC<EditingWorkspaceProps> = props => {
             editorSessionId: '',
             handleDeclarationNavigate: props.handleDeclarationNavigate,
             handleEditorEval: props.handleEditorEval,
+            handleEditorCheck: props.handleEditorCheck,
             handleEditorValueChange: props.handleEditorValueChange,
             handleEditorUpdateBreakpoints: props.handleEditorUpdateBreakpoints,
             handleUpdateHasUnsavedChanges: props.handleUpdateHasUnsavedChanges,

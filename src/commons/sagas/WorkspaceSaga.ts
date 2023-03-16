@@ -48,6 +48,7 @@ import {
   ADD_HTML_CONSOLE_ERROR,
   BEGIN_CLEAR_CONTEXT,
   CHAPTER_SELECT,
+  CHECK_EDITOR,
   END_CLEAR_CONTEXT,
   EVAL_EDITOR,
   EVAL_EDITOR_AND_TESTCASES,
@@ -72,6 +73,11 @@ export default function* WorkspaceSaga(): SagaIterator {
       );
     }
   );
+
+  yield takeEvery(CHECK_EDITOR, function* (action: ReturnType<typeof actions.checkEditor>) {
+    const workspaceLocation = action.payload.workspaceLocation;
+    yield* checkEditor(workspaceLocation);
+  });
 
   yield takeEvery(EVAL_EDITOR, function* (action: ReturnType<typeof actions.evalEditor>) {
     const workspaceLocation = action.payload.workspaceLocation;
@@ -364,6 +370,37 @@ export function* dumpDisplayBuffer(
   workspaceLocation: WorkspaceLocation
 ): Generator<StrictEffect, void, any> {
   yield put(actions.handleConsoleLog(workspaceLocation, ...DisplayBufferService.dump()));
+}
+
+export function* checkEditor(
+  workspaceLocation: WorkspaceLocation
+): Generator<StrictEffect, void, any> {
+  const [editorCode]: [
+    string,
+  ] = yield select((state: OverallState) => [
+    // TODO: Hardcoded to make use of the first editor tab. Rewrite after editor tabs are added.
+    state.workspaces[workspaceLocation].editorTabs[0].value,
+  ]);
+
+  // End any code that is running right now.
+  yield put(actions.beginInterruptExecution(workspaceLocation));
+  yield* clearContext(workspaceLocation, editorCode);
+  yield put(actions.clearReplOutput(workspaceLocation));
+  const context = yield select(
+    (state: OverallState) => state.workspaces[workspaceLocation].context
+  );
+  // Check for initial syntax errors. If there are errors, we will print the error messages.
+  console.log('parsed program:', parse(editorCode, context))
+  if (context.errors.length > 0) {
+    yield* dumpDisplayBuffer(workspaceLocation);
+    yield put(actions.evalInterpreterError(context.errors, workspaceLocation));
+    // for achievement event tracking
+    const events =[EventType.ERROR];
+    yield put(actions.addEvent(events));
+  } else {
+    yield* dumpDisplayBuffer(workspaceLocation);
+    yield put(actions.evalInterpreterSuccess('Ready to run!', workspaceLocation));
+  }
 }
 
 export function* evalEditor(

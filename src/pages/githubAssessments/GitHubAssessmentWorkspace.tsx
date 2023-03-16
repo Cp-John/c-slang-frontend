@@ -1075,6 +1075,7 @@ const GitHubAssessmentWorkspace: React.FC<GitHubAssessmentWorkspaceProps> = prop
     handleDeclarationNavigate: (cursorPosition: Position) =>
       dispatch(navigateToDeclaration(workspaceLocation, cursorPosition)),
     handleEditorEval: handleEval,
+    handleEditorCheck: () => {},
     handleEditorValueChange: onEditorValueChange,
     handleUpdateHasUnsavedChanges: handleUpdateHasUnsavedChanges,
     handleEditorUpdateBreakpoints: (breakpoints: string[]) =>
