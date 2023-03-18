@@ -3,7 +3,7 @@ import { Chapter, Variant } from 'calc-slang/dist/types';
 import { Links } from './Constants';
 
 const MAIN_INTRODUCTION = `
-Welcome to the Source Academy playground!
+Welcome and enjoy programming in c! 
 `;
 
 const HOTKEYS_INTRODUCTION = `
@@ -11,6 +11,7 @@ const HOTKEYS_INTRODUCTION = `
 In the editor on the left, you can use the [_Ace keyboard shortcuts_](${Links.aceHotkeys}) 
 and also the [_Source Academy keyboard shortcuts_](${Links.sourceHotkeys}).
 
+Developer: Cao Peng, Contact: e0376984@u.nus.edu
 `;
 
 
