@@ -7,7 +7,7 @@ This is a C language interpreter, enjoy programming!
 `;
 
 const HOTKEYS_INTRODUCTION = `
-Currently NOT SUPPORTED: struct, function pointers, arrays (use pointers instead).
+Currently NOT SUPPORTED: preprocessor directives, struct, function pointers, arrays (use pointers instead).
 
 In the editor on the left, you can use the [_Ace keyboard shortcuts_](${Links.aceHotkeys}) 
 and also the [_Source Academy keyboard shortcuts_](${Links.sourceHotkeys}).
