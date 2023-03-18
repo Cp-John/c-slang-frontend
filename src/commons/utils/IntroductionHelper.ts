@@ -3,10 +3,11 @@ import { Chapter, Variant } from 'calc-slang/dist/types';
 import { Links } from './Constants';
 
 const MAIN_INTRODUCTION = `
-Welcome and enjoy programming in c! 
+This is a C language interpreter, enjoy programming! 
 `;
 
 const HOTKEYS_INTRODUCTION = `
+Currently NOT SUPPORTED: struct, function pointers, arrays (use pointers instead).
 
 In the editor on the left, you can use the [_Ace keyboard shortcuts_](${Links.aceHotkeys}) 
 and also the [_Source Academy keyboard shortcuts_](${Links.sourceHotkeys}).
