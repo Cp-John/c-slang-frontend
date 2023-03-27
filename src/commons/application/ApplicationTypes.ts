@@ -1,4 +1,4 @@
-import { Chapter, Language, SourceError, Variant } from 'calc-slang/dist/types';
+import { Chapter, Language, SourceError, Variant } from 'c-slang/dist/types';
 
 import { AcademyState } from '../../features/academy/AcademyTypes';
 import { AchievementState } from '../../features/achievement/AchievementTypes';
@@ -206,7 +206,7 @@ int main() {
 
 /**
  * Create a default IWorkspaceState for 'resetting' a workspace.
- * Takes in parameters to set the calc-slang library and chapter.
+ * Takes in parameters to set the c-slang library and chapter.
  *
  * @param workspaceLocation the location of the workspace, used for context
  */
