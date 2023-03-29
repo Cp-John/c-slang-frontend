@@ -66,7 +66,7 @@ export function HighlightRulesSelector_native(
         {
           'variable.language':
             // Purple: for disallowed words
-            'implements|interface|package|private|protected|public|static|' +
+            'implements|interface|package|private|protected|public|static' +
             ChapterForbbidenWordSelector(), // Pseudo
           keyword:
             // Orange: for normal keywords
@@ -85,19 +85,19 @@ export function HighlightRulesSelector_native(
             'true|false|' +
             'null|Infinity|NaN|undefined|' +
             'break|case|continue|default|delete|do|else|finally|for|' +
-            'if|in|of|instanceof|new|return|switch|throw|try|typeof|while|with|debugger|' +
+            'if|else|in|of|instanceof|new|return|switch|case|throw|try|sizeof|do|while|for|break|continue|' +
             'escape|with|' +
             'extends|super|export',
           'storage.type':
             // Yellow: for declarations
-            'const|let|var|function|import|class|catch',
+            'int|float|void|char|double',
           'support.function': 'alert'
           // "constant.language.boolean": "true|false"
         },
         'identifier'
       );
       const keywordBeforeRegex =
-        'case|do|else|finally|in|instanceof|return|throw|try|typeof|yield|void|int|char|float|double|break|continue|if|else|while|for|#include|#define|printf|scanf|rand|time|sqrt|abs|strlen|malloc|free|printHeap|sizeof';
+        'printf|scanf|rand|time|sqrt|abs|strlen|malloc|free|printHeap|printEnv|sizeof';
       const escapedRegex =
         '\\\\(?:x[0-9a-fA-F]{2}|' + // hex
         'u[0-9a-fA-F]{4}|' + // unicode
