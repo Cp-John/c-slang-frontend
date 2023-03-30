@@ -10,7 +10,6 @@ import GitHubClassroom from '../../pages/githubAssessments/GitHubClassroom';
 import GitHubCallback from '../../pages/githubCallback/GitHubCallback';
 import Login from '../../pages/login/Login';
 import MissionControlContainer from '../../pages/missionControl/MissionControlContainer';
-import NotFound from '../../pages/notFound/NotFound';
 import Playground from '../../pages/playground/PlaygroundContainer';
 import Welcome from '../../pages/welcome/Welcome';
 import { AssessmentConfiguration } from '../assessment/AssessmentTypes';
@@ -145,7 +144,7 @@ const Application: React.FC<ApplicationProps> = props => {
   ];
 
   const isDisabledEffective = !['staff', 'admin'].includes(props.role!) && isDisabled;
-
+  console.log(Constants.playgroundOnly)
   return (
     <WorkspaceSettingsContext.Provider value={[workspaceSettings, setWorkspaceSettings]}>
       <div className="Application">
@@ -185,11 +184,11 @@ const Application: React.FC<ApplicationProps> = props => {
           {!isDisabledEffective && Constants.playgroundOnly && (
             <Switch>
               {commonPaths}
-              <Route path="/playground" component={Playground} />
+              <Route path="/" component={Playground} />
               <Route exact={true} path="/">
-                <Redirect to="/playground" />
+                <Redirect to="/" />
               </Route>
-              <Route component={NotFound} />
+              <Route component={Playground} />
             </Switch>
           )}
           {!isDisabledEffective && !Constants.playgroundOnly && (
@@ -229,7 +228,7 @@ const Application: React.FC<ApplicationProps> = props => {
                   key="legacy-academy"
                 />
               ]}
-              <Route component={NotFound} />
+              <Route component={Playground} />
             </Switch>
           )}
         </div>

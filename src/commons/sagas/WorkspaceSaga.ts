@@ -37,8 +37,8 @@ import {
   getDifferenceInMethods,
   getRestoreExtraMethodsString,
   getStoreExtraMethodsString,
-  highlightClean,
-  highlightLine,
+  // highlightClean,
+  // highlightLine,
   makeElevatedContext,
   visualizeEnv
 } from '../utils/JsSlangHelper';
@@ -142,9 +142,9 @@ export default function* WorkspaceSaga(): SagaIterator {
     function* (action: ReturnType<typeof actions.highlightEditorLine>) {
       const highlightedLines = action.payload.highlightedLines;
       if (highlightedLines.length === 0) {
-        highlightClean();
+        // highlightClean();
       } else {
-        highlightLine(highlightedLines[0]);
+        // highlightLine(highlightedLines[0]);
       }
       yield;
     }

@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router';
 
 import { Role } from '../../commons/application/ApplicationTypes';
-import NotFound from '../notFound/NotFound';
+import Playground from '../playground/Playground';
 import AchievementControl from './control/AchievementControlContainer';
 import AchievementDashboard from './subcomponents/AchievementDashboardContainer';
 
@@ -17,7 +17,7 @@ function Achievement(props: AchievementProps) {
   const { role } = props;
 
   const toAchievementControl =
-    role === Role.Admin || role === Role.Staff ? AchievementControl : NotFound;
+    role === Role.Admin || role === Role.Staff ? AchievementControl : Playground;
 
   return (
     <Switch>
@@ -30,7 +30,7 @@ function Achievement(props: AchievementProps) {
         path="/courses/:courseId/achievements/control"
         component={toAchievementControl}
       ></Route>
-      <Route component={NotFound} />
+      <Route component={Playground} />
     </Switch>
   );
 }

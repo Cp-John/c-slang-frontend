@@ -98,21 +98,21 @@ export function visualizeEnv({ context }: { context: Context }) {
   }
 }
 
-export function highlightClean() {
-  if ((window as any).Inspector) {
-    (window as any).Inspector.highlightClean();
-  } else {
-    throw new Error('Inspector not loaded');
-  }
-}
+// export function highlightClean() {
+//   if ((window as any).Inspector) {
+//     (window as any).Inspector.highlightClean();
+//   } else {
+//     throw new Error('Inspector not loaded');
+//   }
+// }
 
-export function highlightLine(line: number) {
-  if ((window as any).Inspector) {
-    (window as any).Inspector.highlightLine(line);
-  } else {
-    throw new Error('Inspector not loaded');
-  }
-}
+// export function highlightLine(line: number) {
+//   if ((window as any).Inspector) {
+//     (window as any).Inspector.highlightLine(line);
+//   } else {
+//     throw new Error('Inspector not loaded');
+//   }
+// }
 
 export const externalBuiltIns = {
   display,

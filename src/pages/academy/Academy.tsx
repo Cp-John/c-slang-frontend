@@ -14,7 +14,7 @@ import { assessmentTypeLink } from '../../commons/utils/ParamParseHelper';
 import { assessmentRegExp, gradingRegExp } from '../../features/academy/AcademyTypes';
 import Achievement from '../../pages/achievement/AchievementContainer';
 import Sourcecast from '../../pages/sourcecast/SourcecastContainer';
-import NotFound from '../notFound/NotFound';
+import Playground from '../playground/Playground';
 import AdminPanel from './adminPanel/AdminPanelContainer';
 import DashboardContainer from './dashboard/DashboardContainer';
 import Game from './game/Game';
@@ -78,7 +78,7 @@ const Academy: React.FC<{}> = () => {
         </Route>
         {staffRoutes}
         {role === 'admin' && <Route path={`${path}/adminpanel`} component={AdminPanel} />}
-        <Route component={NotFound} />
+        <Route component={Playground} />
       </Switch>
     </div>
   );
