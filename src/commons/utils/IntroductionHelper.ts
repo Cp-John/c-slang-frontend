@@ -9,7 +9,7 @@ NOT SUPPORTED: preprocessor directives, struct, function pointers, array declara
 
 const HOTKEYS_INTRODUCTION = `
 Tips:
-  1. Call _printEnv()_ to view what is accessable in the current environment
+  1. Call _printEnv()_ to display what is accessable in the current environment
   2. The editor on the left supports [_Ace keyboard shortcuts_](${Links.aceHotkeys}) 
     and [_Source Academy keyboard shortcuts_](${Links.sourceHotkeys}).
 
