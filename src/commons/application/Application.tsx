@@ -20,6 +20,8 @@ import { defaultWorkspaceSettings, WorkspaceSettingsContext } from '../Workspace
 import { Role } from './ApplicationTypes';
 import { UpdateCourseConfiguration, UserCourse } from './types/SessionTypes';
 
+console.log(Constants.playgroundOnly)
+
 export type ApplicationProps = DispatchProps & StateProps & RouteComponentProps<{}>;
 
 export type DispatchProps = {
