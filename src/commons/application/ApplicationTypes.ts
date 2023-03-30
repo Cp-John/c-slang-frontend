@@ -180,7 +180,8 @@ export const defaultPlayground: PlaygroundState = {
 };
 
 export const defaultEditorValue = 
-`// The Tower of Hanoi is a mathematical game or puzzle consisting of 
+`// Example Program:
+// The Tower of Hanoi is a mathematical game or puzzle consisting of 
 // three rods and a number of disks of various diameters, which can 
 // slide onto any rod. The objective of the puzzle is to move the 
 // entire stack from the first rod to the last rod.
