@@ -69,14 +69,6 @@ const Repl: React.FC<ReplProps> = (props: ReplProps) => {
     <div className="Repl" style={{ display: props.hidden ? 'none' : undefined }}>
       <div className="repl-output-parent">
         {cards}
-        {/* {!props.inputHidden && (
-          <HotKeys
-            className={classNames('repl-input-parent', 'row', Classes.CARD, Classes.ELEVATION_0)}
-            handlers={handlers}
-          >
-            <ReplInput {...props} />
-          </HotKeys>
-        )} */}
       </div>
     </div>
   );
