@@ -1,7 +1,7 @@
 {
-  "homepage": "https://Cp-John.github.io/c-slang",
+  "homepage": "https://Cp-John.github.io/c-slang-frontend",
   "private": true,
-  "name": "frontend",
+  "name": "c-slang-frontend",
   "version": "1.4.3",
   "scripts-info": {
     "format": "Format source code",
