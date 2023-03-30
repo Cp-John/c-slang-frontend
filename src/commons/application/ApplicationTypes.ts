@@ -179,27 +179,30 @@ export const defaultPlayground: PlaygroundState = {
   githubSaveInfo: { repoName: '', filePath: '' }
 };
 
-export const defaultEditorValue = `
+export const defaultEditorValue = 
+`// The Tower of Hanoi is a mathematical game or puzzle consisting of 
+// three rods and a number of disks of various diameters, which can 
+// slide onto any rod. The objective of the puzzle is to move the 
+// entire stack from the first rod to the last rod.
+// (visit https://en.wikipedia.org/wiki/Tower_of_Hanoi for the game rules)
+
 #include <stdio.h>
 
 void move(int n, char from_rod, char to_rod, char aux_rod) {
     if (n == 1) {
-        printf("将盘子 %d 从柱子 %c 移动到柱子 %c\\n", n, from_rod, to_rod);
+        printf("move disk %d from rod %c to rod %c\\n", n, from_rod, to_rod);
         return;
     }
     move(n-1, from_rod, aux_rod, to_rod);
-    printf("将盘子 %d 从柱子 %c 移动到柱子 %c\\n", n, from_rod, to_rod);
+    printf("move disk %d from rod %c to rod %c\\n", n, from_rod, to_rod);
     move(n-1, aux_rod, to_rod, from_rod);
 }
 
 int main() {
     int n;
-    n = 1;
-    // printf("请输入盘子的数量：");
-    // scanf("%d", &n);
-
+    printf("Enter the number of disks: ");
+    scanf("%d", &n);
     move(n, 'A', 'C', 'B');
-
     return 0;
 }
 `;
