@@ -1,14 +1,11 @@
-import { Card, Classes, Pre } from '@blueprintjs/core';
+import { Card, Pre } from '@blueprintjs/core';
 import { Ace } from 'ace-builds';
 import { parseError } from 'c-slang';
 import { Chapter, Variant } from 'c-slang/dist/types';
-import classNames from 'classnames';
 import * as React from 'react';
-import { HotKeys } from 'react-hotkeys';
 
 import { InterpreterOutput } from '../application/ApplicationTypes';
 import { ExternalLibraryName } from '../application/types/ExternalTypes';
-import { ReplInput } from './ReplInput';
 import { OutputProps } from './ReplTypes';
 
 const ESCAPE_CHARACTERS = {
@@ -72,14 +69,14 @@ const Repl: React.FC<ReplProps> = (props: ReplProps) => {
     <div className="Repl" style={{ display: props.hidden ? 'none' : undefined }}>
       <div className="repl-output-parent">
         {cards}
-        {!props.inputHidden && (
+        {/* {!props.inputHidden && (
           <HotKeys
             className={classNames('repl-input-parent', 'row', Classes.CARD, Classes.ELEVATION_0)}
             handlers={handlers}
           >
             <ReplInput {...props} />
           </HotKeys>
-        )}
+        )} */}
       </div>
     </div>
   );
@@ -144,8 +141,8 @@ export const Output: React.FC<OutputProps> = (props: OutputProps) => {
 };
 
 /* Override handler, so does not trigger when focus is in editor */
-const handlers = {
-  goGreen: () => {}
-};
+// const handlers = {
+//   goGreen: () => {}
+// };
 
 export default Repl;
