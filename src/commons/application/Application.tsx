@@ -20,8 +20,6 @@ import { defaultWorkspaceSettings, WorkspaceSettingsContext } from '../Workspace
 import { Role } from './ApplicationTypes';
 import { UpdateCourseConfiguration, UserCourse } from './types/SessionTypes';
 
-console.log(Constants.playgroundOnly)
-
 export type ApplicationProps = DispatchProps & StateProps & RouteComponentProps<{}>;
 
 export type DispatchProps = {
@@ -146,7 +144,6 @@ const Application: React.FC<ApplicationProps> = props => {
   ];
 
   const isDisabledEffective = !['staff', 'admin'].includes(props.role!) && isDisabled;
-  console.log(Constants.playgroundOnly)
   return (
     <WorkspaceSettingsContext.Provider value={[workspaceSettings, setWorkspaceSettings]}>
       <div className="Application">
