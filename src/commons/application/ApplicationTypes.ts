@@ -199,11 +199,16 @@ void move(int n, char from_rod, char to_rod, char aux_rod) {
 }
 
 int main() {
-    int n;
-    printf("Enter the number of disks: ");
-    scanf("%d", &n);
-    move(n, 'A', 'C', 'B');
-    return 0;
+  int n = -1;
+  printf("Enter the number of disks: ");
+  while (n <= 0) {
+      scanf("%d", &n);
+      if (n <= 0) {
+          printf("Must enter a positive number: ");
+      }
+  }
+  move(n, 'A', 'C', 'B');
+  return 0;
 }
 `;
 
