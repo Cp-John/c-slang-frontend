@@ -6,8 +6,8 @@
     "runtime-main.js": "/c-slang-frontend/static/js/runtime-main.d6318b7f.js",
     "runtime-main.js.map": "/c-slang-frontend/static/js/runtime-main.d6318b7f.js.map",
     "static/css/2.acc833ce.chunk.css": "/c-slang-frontend/static/css/2.acc833ce.chunk.css",
-    "static/js/2.d0cf4013.chunk.js": "/c-slang-frontend/static/js/2.d0cf4013.chunk.js",
-    "static/js/2.d0cf4013.chunk.js.map": "/c-slang-frontend/static/js/2.d0cf4013.chunk.js.map",
+    "static/js/2.8fd5ba3b.chunk.js": "/c-slang-frontend/static/js/2.8fd5ba3b.chunk.js",
+    "static/js/2.8fd5ba3b.chunk.js.map": "/c-slang-frontend/static/js/2.8fd5ba3b.chunk.js.map",
     "mode-twig.js": "/c-slang-frontend/02ebbaff286dee0cee94caaf993701a5.js",
     "matlab.js": "/c-slang-frontend/03b6f5ed432b1096271448f530f79c3a.js",
     "velocity.js": "/c-slang-frontend/03cb1a484fcb851937e93afd75370352.js",
@@ -438,14 +438,14 @@
     "service-worker.js.map": "/c-slang-frontend/service-worker.js.map",
     "static/css/2.acc833ce.chunk.css.map": "/c-slang-frontend/static/css/2.acc833ce.chunk.css.map",
     "static/css/main.396af40d.chunk.css.map": "/c-slang-frontend/static/css/main.396af40d.chunk.css.map",
-    "static/js/2.d0cf4013.chunk.js.LICENSE.txt": "/c-slang-frontend/static/js/2.d0cf4013.chunk.js.LICENSE.txt",
+    "static/js/2.8fd5ba3b.chunk.js.LICENSE.txt": "/c-slang-frontend/static/js/2.8fd5ba3b.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/c-slang-frontend/static/media/no_page_background.48a97695.jpg",
     "static/media/default_cover_image.jpg": "/c-slang-frontend/static/media/default_cover_image.e2be0724.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d6318b7f.js",
     "static/css/2.acc833ce.chunk.css",
-    "static/js/2.d0cf4013.chunk.js",
+    "static/js/2.8fd5ba3b.chunk.js",
     "static/css/main.396af40d.chunk.css",
     "static/js/main.ce032898.chunk.js"
   ]
