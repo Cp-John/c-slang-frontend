@@ -34,8 +34,8 @@ export const evalTestcaseFailure = (
   index: number
 ) => action(EVAL_TESTCASE_FAILURE, { type: 'errors', value, workspaceLocation, index });
 
-export const evalInterpreterError = (errors: SourceError[], workspaceLocation: WorkspaceLocation) =>
-  action(EVAL_INTERPRETER_ERROR, { type: 'errors', errors, workspaceLocation });
+export const evalInterpreterError = (errors: SourceError[], workspaceLocation: WorkspaceLocation, stdout: string = '') =>
+  action(EVAL_INTERPRETER_ERROR, { type: 'errors', errors, workspaceLocation, stdout });
 
 export const beginInterruptExecution = (workspaceLocation: WorkspaceLocation) =>
   action(BEGIN_INTERRUPT_EXECUTION, { workspaceLocation });

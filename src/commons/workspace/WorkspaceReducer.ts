@@ -407,7 +407,7 @@ export const WorkspaceReducer: Reducer<WorkspaceManagerState> = (
         newOutput = state[workspaceLocation].output.slice(0, -1).concat({
           type: action.payload.type,
           errors: action.payload.errors,
-          consoleLogs: lastOutput.consoleLogs
+          consoleLogs: action.payload.stdout ? [action.payload.stdout] : []
         } as ErrorOutput);
       } else {
         newOutput = state[workspaceLocation].output.concat({

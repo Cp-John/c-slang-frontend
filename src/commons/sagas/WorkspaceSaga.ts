@@ -629,7 +629,7 @@ export function* evalCode(
     result.status !== 'suspended-non-det'
   ) {
     yield* dumpDisplayBuffer(workspaceLocation);
-    yield put(actions.evalInterpreterError(context.errors, workspaceLocation));
+    yield put(actions.evalInterpreterError(context.errors, workspaceLocation, context['stdout']));
 
     // we need to parse again, but preserve the errors in context
     const oldErrors = context.errors;
