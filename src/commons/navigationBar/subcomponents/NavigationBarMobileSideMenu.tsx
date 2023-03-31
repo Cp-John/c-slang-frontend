@@ -90,7 +90,7 @@ const NavigationBarMobileSideMenu: React.FC<NavigationBarMobileSideMenuProps> = 
           Classes.MINIMAL,
           Classes.LARGE
         )}
-        to="/playground"
+        to="/c-slang-frontend"
         onClick={props.onClose}
       >
         <Icon icon={IconNames.CODE} />

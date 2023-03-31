@@ -103,7 +103,7 @@ const NavigationBar: React.FC<NavigationBarProps> = props => {
                 Classes.MINIMAL,
                 Classes.LARGE
               )}
-              to="/playground"
+              to="/c-slang-frontend"
               onClick={() => setMobileSideMenuOpen(false)}
             >
               <Icon icon={IconNames.CODE} />
@@ -131,7 +131,7 @@ const NavigationBar: React.FC<NavigationBarProps> = props => {
         <NavLink
           activeClassName={Classes.ACTIVE}
           className={classNames('NavigationBar__link__mobile', Classes.BUTTON, Classes.MINIMAL)}
-          to="/playground"
+          to="/c-slang-frontend"
         >
           <Icon icon={IconNames.CODE} />
           <div>Playground</div>
@@ -151,7 +151,7 @@ const NavigationBar: React.FC<NavigationBarProps> = props => {
       <NavLink
         activeClassName={Classes.ACTIVE}
         className={classNames('NavigationBar__link__mobile', Classes.BUTTON, Classes.MINIMAL)}
-        to="/playground"
+        to="/c-slang-frontend"
       >
         <Icon icon={IconNames.CODE} />
         <div>Playground</div>
@@ -274,7 +274,7 @@ const NavigationBar: React.FC<NavigationBarProps> = props => {
         <NavLink
           activeClassName={Classes.ACTIVE}
           className={classNames('NavigationBar__link', Classes.BUTTON, Classes.MINIMAL)}
-          to="/playground"
+          to="/c-slang-frontend"
         >
           <Icon icon={IconNames.CODE} />
           <div className="navbar-button-text">Playground</div>
@@ -343,7 +343,7 @@ const NavigationBar: React.FC<NavigationBarProps> = props => {
       </Navbar>
 
       <Switch>
-        <Route path="/playground" />
+        <Route path="/c-slang-frontend" />
         <Route path="/githubassessments" />
         <Route path="/contributors" />
         <Route path="/courses/:courseId/sourcecast" />

@@ -201,7 +201,7 @@ const Application: React.FC<ApplicationProps> = props => {
                 component={MissionControlContainer}
               />
               <Route
-                path="/playground"
+                path="/c-slang-frontend"
                 render={ensureUserAndRoleAndRouteTo(props, <Playground />)}
               />
 
