@@ -90,7 +90,7 @@ export function HighlightRulesSelector_native(
             'extends|super|export',
           'storage.type':
             // Yellow: for declarations
-            'int|float|void|char|double',
+            'int|float|void|char|double|struct',
           'support.function': 'alert'
           // "constant.language.boolean": "true|false"
         },
