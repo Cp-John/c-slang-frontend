@@ -85,7 +85,7 @@ export function HighlightRulesSelector_native(
             'true|false|' +
             'null|Infinity|NaN|undefined|' +
             'break|case|continue|default|delete|do|else|finally|for|' +
-            'if|else|in|of|instanceof|new|return|switch|case|throw|try|sizeof|do|while|for|break|continue|' +
+            'if|else|in|of|instanceof|new|return|switch|case|throw|try|sizeof|do|while|for|break|continue' +
             'escape|with|' +
             'extends|super|export',
           'storage.type':
@@ -97,7 +97,7 @@ export function HighlightRulesSelector_native(
         'identifier'
       );
       const keywordBeforeRegex =
-        'printf|scanf|rand|time|sqrt|abs|strlen|malloc|free|printHeap|printEnv|sizeof|typeof|strncpy|exit|NULL';
+        'printf|scanf|rand|time|sqrt|abs|strlen|malloc|free|printHeap|printEnv|sizeof|typeof|strncpy|strcpy|strcmp|exit|NULL';
       const escapedRegex =
         '\\\\(?:x[0-9a-fA-F]{2}|' + // hex
         'u[0-9a-fA-F]{4}|' + // unicode
