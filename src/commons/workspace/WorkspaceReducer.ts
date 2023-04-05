@@ -608,7 +608,7 @@ export const WorkspaceReducer: Reducer<WorkspaceManagerState> = (
           ...state[workspaceLocation],
           // TODO: Hardcoded to make use of the first editor tab. Rewrite after editor tabs are added.
           editorTabs: [
-            { ...state[workspaceLocation].editorTabs[0], breakpoints: action.payload.breakpoints }
+            { ...state[workspaceLocation].editorTabs[0], breakpoints: [] }
           ]
         }
       };

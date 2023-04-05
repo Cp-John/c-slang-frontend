@@ -181,7 +181,7 @@ const Playground: React.FC<PlaygroundProps> = ({ workspaceLocation = 'playground
   const [selectedTab, setSelectedTab] = React.useState(
     shouldAddDevice ? SideContentType.remoteExecution : SideContentType.introduction
   );
-  const [hasBreakpoints, setHasBreakpoints] = React.useState(false);
+  const [hasBreakpoints] = React.useState(false);
   const [sessionId, setSessionId] = React.useState(() =>
     initSession('playground', {
       // TODO: Hardcoded to make use of the first editor tab. Rewrite after editor tabs are added.
@@ -487,31 +487,32 @@ const Playground: React.FC<PlaygroundProps> = ({ workspaceLocation = 'playground
   );
 
   const handleEditorUpdateBreakpoints = React.useCallback(
-    (breakpoints: string[]) => {
-      // get rid of holes in array
-      const numberOfBreakpoints = breakpoints.filter(arrayItem => !!arrayItem).length;
-      if (numberOfBreakpoints > 0) {
-        setHasBreakpoints(true);
-        if (propsRef.current.playgroundSourceChapter <= 2) {
-          /**
-           * There are breakpoints set on Source Chapter 2, so we set the
-           * Redux state for the editor to evaluate to the substituter
-           */
+    () => {}, []
+    // (breakpoints: string[]) => {
+    //   // get rid of holes in array
+    //   const numberOfBreakpoints = breakpoints.filter(arrayItem => !!arrayItem).length;
+    //   if (numberOfBreakpoints > 0) {
+    //     setHasBreakpoints(true);
+    //     if (propsRef.current.playgroundSourceChapter <= 2) {
+    //       /**
+    //        * There are breakpoints set on Source Chapter 2, so we set the
+    //        * Redux state for the editor to evaluate to the substituter
+    //        */
 
-          propsRef.current.handleUsingSubst(true);
-        }
-      }
-      if (numberOfBreakpoints === 0) {
-        setHasBreakpoints(false);
+    //       propsRef.current.handleUsingSubst(true);
+    //     }
+    //   }
+    //   if (numberOfBreakpoints === 0) {
+    //     setHasBreakpoints(false);
 
-        if (selectedTab !== SideContentType.substVisualizer) {
-          propsRef.current.handleReplOutputClear();
-          propsRef.current.handleUsingSubst(false);
-        }
-      }
-      propsRef.current.handleEditorUpdateBreakpoints(breakpoints);
-    },
-    [selectedTab]
+    //     if (selectedTab !== SideContentType.substVisualizer) {
+    //       propsRef.current.handleReplOutputClear();
+    //       propsRef.current.handleUsingSubst(false);
+    //     }
+    //   }
+    //   propsRef.current.handleEditorUpdateBreakpoints(breakpoints);
+    // },
+    // [selectedTab]
   );
 
   const replDisabled = usingRemoteExecution;
