@@ -4,7 +4,7 @@ import { Links } from './Constants';
 
 const MAIN_INTRODUCTION = `
 This is a C language interpreter, which supports Syntax Check, Type Check, Memory Management, Heap Visualization (_printHeap_), Pointer Arithmetic, etc. Enjoy!\n
-NOT supported: preprocessor directives, function pointer\n
+NOT supported: preprocessor directives (except macro definition), function pointer\n
 supported data types: _char(1 byte)_, _int(4)_, _float(4)_, _double_(interpreted as _float_), _pointer(4)_, _array_, _struct_\n
 `;
 
