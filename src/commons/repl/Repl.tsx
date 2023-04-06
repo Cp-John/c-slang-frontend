@@ -121,9 +121,9 @@ export const Output: React.FC<OutputProps> = (props: OutputProps) => {
       } else {
         return (
           <Card>
-            <Pre className="log-output">{props.output.consoleLogs.join('\n')}</Pre>
-            <br />
             <Pre className="error-output">{parseError(props.output.errors)}</Pre>
+            <br />
+            <Pre className="log-output">{props.output.consoleLogs.join('\n')}</Pre>
           </Card>
         );
       }
