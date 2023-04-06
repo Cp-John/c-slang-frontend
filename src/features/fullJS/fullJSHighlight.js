@@ -98,7 +98,7 @@ export function HighlightRulesSelector_native(
       );
       const keywordBeforeRegex =
         'printf|scanf|rand|time|sqrt|abs|floor|ceil|fabs|pow|malloc|free|printHeap|printEnv|' +
-        'sizeof|typeof|strncpy|strlen|strcmp|strcat|exit|' + 
+        'sizeof|typeof|strncpy|strcpy|strlen|strcmp|strcat|exit|' + 
         'NULL|RAND_MAX|INT_MAX|INT_MIN|CHAR_MAX|CHAR_INT|UINT_MAX|M_PI';
       const escapedRegex =
         '\\\\(?:x[0-9a-fA-F]{2}|' + // hex
