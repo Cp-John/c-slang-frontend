@@ -4185,10 +4185,10 @@ bytes@3.1.2:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
-c-slang@1.0.67:
-  version "1.0.67"
-  resolved "https://registry.yarnpkg.com/c-slang/-/c-slang-1.0.67.tgz#a47bb5871f096a616d7d9aafe49ca8abb13244a2"
-  integrity sha512-Dj4kf0xD1M9p9yBn1A6tdSP6UGILC7UDtN6PDhrP25Fr+hnBiAwjIzarytslsDGQB01/HMdrHyv/sy0x/kLTWw==
+c-slang@1.0.68:
+  version "1.0.68"
+  resolved "https://registry.yarnpkg.com/c-slang/-/c-slang-1.0.68.tgz#f4067eba4db961e1fd4aa335012be1e5471c61e4"
+  integrity sha512-fxk7wsvz6QBCUWzU4EGPYRGmuE/syuzqltmAfTrhXk/UuKZ/mh+FdvH3YHCEok69WFpix7hK0wVAXjnPzjWRhg==
   dependencies:
     "@babel/parser" "^7.19.4"
     "@joeychenofficial/alt-ergo-modified" "^2.4.0"
